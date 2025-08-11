@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Print friendly */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  header,
+  .no-print,
+  a,
+  button {
+    display: none !important;
+  }
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
