@@ -109,20 +109,23 @@ export default function Admin() {
   return (
     <>
       <div className="min-h-screen p-6 max-w-3xl mx-auto bg-white dark:bg-gray-900 rounded-lg shadow-md relative">
-        <button
-          onClick={() => router.push('/')}
-          aria-label="Return to Home"
-          className="fixed top-6 right-8 z-50 flex items-center gap-2 bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white px-5 py-2 rounded-md hover:bg-gray-400 dark:hover:bg-gray-600 transition"
-        >
-          ⬅️ Return to Home
-        </button>
+        <div className="sm:block flex items-center justify-between">
+          <h1 className="text-xl sm:text-3xl font-bold text-gray-900 dark:text-white text-center sm:text-left flex-grow">
+            Admin Panel: Add/Edit Certificates
+          </h1>
 
-        <h1 className="text-3xl font-bold mb-6 text-center text-gray-900 dark:text-white">
-          Admin Panel: Add/Edit Certificates
-        </h1>
+          <button
+            onClick={() => router.push('/')}
+            aria-label="Return to Home"
+            className="ml-2 sm:ml-0 sm:fixed sm:top-6 sm:right-8 flex items-center gap-2 bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-md hover:bg-gray-400 dark:hover:bg-gray-600 transition"
+          >
+            ⬅️ <span className="hidden xs:inline">Return to Home</span>
+          </button>
+        </div>
 
         <form onSubmit={handleSubmit} className="space-y-4" noValidate>
           <div>
+            <br />
             <label htmlFor="title" className="block mb-1 font-semibold text-gray-700 dark:text-gray-300">
               Title <span className="text-red-500">*</span>
             </label>

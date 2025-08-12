@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect } from 'react';
+import PdfViewer from './pdf';
 
 export default function LightboxModal({ open, onClose, certificate, onDelete }) {
   useEffect(() => {
@@ -53,18 +54,14 @@ export default function LightboxModal({ open, onClose, certificate, onDelete }) 
           </button>
 
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{title}</h2>
-          <div className="w-full h-[70vh] flex items-center justify-center mb-4">
+          <div className="w-full flex-1 min-h-[60vh] mb-4 overflow-auto">
             {isPdf ? (
-              <embed
-                src={fileSrc}
-                type="application/pdf"
-                className="w-full h-full object-contain rounded-md"
-              />
+              <PdfViewer base64={certificate.fileBase64} />
             ) : (
               <img
                 src={fileSrc}
                 alt={title}
-                className="w-full h-full object-contain rounded-md"
+                className="w-full h-auto max-h-[80vh] object-contain rounded-md"
               />
             )}
           </div>
